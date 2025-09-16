@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 import os
 # connect to local MongoDB
+uri="mongodb+srv://saad778964321_db_user:saaddb@cluster0.v263wfa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 print(MONGO_URI)
 client = MongoClient(MONGO_URI)

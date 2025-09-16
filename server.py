@@ -1,3 +1,6 @@
+import eventlet
+eventlet.monkey_patch()
+import eventlet.wsgi
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sock import Sock
@@ -169,7 +172,5 @@ def ws(ws):
             ws_clients.remove(ws)
 
 if __name__ == "__main__":
-    import eventlet
-    import eventlet.wsgi
     listener = eventlet.listen(("127.0.0.1", 5000))
     eventlet.wsgi.server(listener, app)
